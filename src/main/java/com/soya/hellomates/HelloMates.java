@@ -22,7 +22,7 @@ public class HelloMates  extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		DateFormat dateFormat=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		String currentTIme=dateFormat.format(new Date());
-		req.setAttribute("currentTime",currentTIme+"zzz");
+		req.setAttribute("currentTime",currentTIme+"z");
 		req.getRequestDispatcher("/WEB-INF/jsp/hello.jsp").forward(req,resp);
 	}
 }
