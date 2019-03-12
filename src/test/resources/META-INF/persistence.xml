@@ -1,0 +1,28 @@
+<persistence version="2.1"
+   xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="
+        http://xmlns.jcp.org/xml/ns/persistence
+        http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+    <persistence-unit name="LJDP-Web2" transaction-type="RESOURCE_LOCAL">
+        <!--这个直接是用到其他的模块  卧槽终于解决这个问题了  卧槽卧槽卧槽
+        在target../WEB-INF/lib/ 下看  这个换项目的时候得想办法解决下
+        -->
+        <jar-file>IEP/WEB-INF/lib/lego-batch-1.0.0.jar</jar-file>
+        <jar-file>IEP/WEB-INF/lib/lego-oa-1.0.0.jar</jar-file>
+        <jar-file>IEP/WEB-INF/lib/lego-sys-serivces-1.0.0.jar</jar-file>
+        <!--
+         <jar-file>lib/lego-sms-1.0.0.jar</jar-file>
+        -->
+        <jar-file>IEP/WEB-INF/lib/lego-sms-1.0.0.jar</jar-file>
+        <jar-file>IEP/WEB-INF/classes</jar-file>
+        <properties>
+        	<property name="hibernate.cache.use_second_level_cache" value="false"/>
+            <property name="hibernate.cache.use_query_cache" value="false" />
+            <property name="hibernate.cache.provider_class" value="org.hibernate.cache.EhCacheProvider" />
+            <property name="hibernate.cache.region.factory_class" value="org.hibernate.cache.ehcache.EhCacheRegionFactory" />
+            <property name="hibernate.format_sql" value="false" />
+            <property name="hibernate.show_sql" value="false"/>
+            <property name="hibernate.enable_lazy_load_no_trans" value="true"/>
+        </properties>
+     </persistence-unit>
+</persistence>

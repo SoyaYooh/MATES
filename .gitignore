@@ -1,0 +1,26 @@
+/target
+/.settings
+.classpath
+.project
+*.iml
+# Package Files #
+.settings/
+target/
+deploy.bat
+*.log
+/pom_bak.xml
+/deploy_sing.bat
+/genSql/
+/build/
+/bin/
+/sql/
+.idea/
+/.svn/ 
+/overlays/ 
+/WebContent/
+application.properties
+springmvc-servlet.xml
+build.xml
+db.properties
+
+
