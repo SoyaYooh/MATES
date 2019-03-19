@@ -12,6 +12,12 @@
         <spring.version>4.3.14.RELEASE</spring.version>
         <druid.version>1.0.18</druid.version>
         <oracle.driver.version>12.1.0.1</oracle.driver.version>
+        <spring.version>4.3.14.RELEASE</spring.version>
+        <sitemesh.version>2.4.2</sitemesh.version>
+        <swagger2.version>2.7.0</swagger2.version>
+        <ldjp.version>2.0.0</ldjp.version>
+        <oracle.driver.version>12.1.0.1</oracle.driver.version>
+        <jackson.version>2.9.4</jackson.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <dependencies>
@@ -48,7 +54,22 @@
             <version>${druid.version}</version>
         </dependency>
         <!---->
-
+        <!-- jackson json -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.module</groupId>
+            <artifactId>jackson-module-jaxb-annotations</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
         <!-- SPRING begin -->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -118,6 +139,107 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>${spring.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <!-- spring orm -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <!-- 4)Spring test -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <!-- WEB begin -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-oxm</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>opensymphony</groupId>
+            <artifactId>sitemesh</artifactId>
+            <version>${sitemesh.version}</version>
+        </dependency>
+        <!-- 轻量级JavaEE开发平台 2.0 -->
+        <dependency>
+            <groupId>org.ljdp</groupId>
+            <artifactId>ljdp-util</artifactId>
+            <version>${ldjp.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ljdp</groupId>
+            <artifactId>ljdp-component</artifactId>
+            <version>${ldjp.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ljdp</groupId>
+            <artifactId>ljdp-common</artifactId>
+            <version>${ldjp.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ljdp</groupId>
+            <artifactId>ljdp-core</artifactId>
+            <version>${ldjp.version}</version>
         </dependency>
         <!-- SPRING end -->
     </dependencies>
