@@ -267,5 +267,43 @@
                 </configuration>
             </plugin>
         </plugins>
+        <resources>
+            <resource>
+                <!--把相对应的独特资源(dev,test,prod这三种的一种)声明，排除jsp文件-->
+                <directory>src/main/resources.${deploy.type}</directory>
+                <excludes>
+                    <exclude>*.jsp</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <!--声明公共资源-->
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+
     </build>
+
+    <profiles>
+    <profile>
+        <id>dev</id>
+        <activation>
+            <activeByDefault>true</activeByDefault>
+        </activation>
+        <properties>
+            <deploy.type>dev</deploy.type>
+        </properties>
+    </profile>
+    <profile>
+        <id>test</id>
+        <properties>
+            <deploy.type>test</deploy.type>
+        </properties>
+    </profile>
+    <profile>
+        <id>prod</id>
+        <properties>
+            <deploy.type>prod</deploy.type>
+        </properties>
+    </profile>
+    </profiles>
 </project>
