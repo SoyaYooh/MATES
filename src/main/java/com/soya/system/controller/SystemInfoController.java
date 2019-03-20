@@ -17,6 +17,7 @@ import java.util.List;
 @RequestMapping("/system/SystemInfo")
 public class SystemInfoController{
 	private final static String PAGE_QUERY = "system/monitor";
+	private final static String PAGE_QUERY2 = "system/webCode";
    @Autowired
 	private IepSystemInfoService iepSystemInfoService;
 	@ApiIgnore
@@ -24,6 +25,13 @@ public class SystemInfoController{
 	public String mainPage(){
 		return PAGE_QUERY;
 	}
+
+	@ApiIgnore
+	@RequestMapping(value = {"/webCode"})
+	public String webCode(){
+		return PAGE_QUERY2;
+	}
+
 	@RequestMapping(value="/query",method= RequestMethod.POST)
 	@ResponseBody
 	public Result doQuery(){
